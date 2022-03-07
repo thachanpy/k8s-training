@@ -8,14 +8,14 @@
       "count": 1,
       "cpu": 2,
       "memory": 4096,
-      "first_ip": "192.168.56.21"
+      "first_ip": "192.168.56.11"
     },
     {
       "name": "k8s-worker",
       "count": 1,
       "cpu": 2,
       "memory": 4096,
-      "first_ip": "192.168.56.11"
+      "first_ip": "192.168.56.21"
     }
   ],
   "linked_clones": true,
