@@ -1,0 +1,32 @@
+{
+  "provider": "virtualbox",
+  "os": "bento/ubuntu-20.04",
+  "username": "k8s",
+  "vm": [
+    {
+      "name": "k8s-master",
+      "count": 1,
+      "cpu": 2,
+      "memory": 4096,
+      "first_ip": "192.168.56.21"
+    },
+    {
+      "name": "k8s-worker",
+      "count": 1,
+      "cpu": 2,
+      "memory": 4096,
+      "first_ip": "192.168.56.11"
+    }
+  ],
+  "linked_clones": true,
+  "network": {
+    "network_type": "private_network",
+    "netmask": "255.255.255.0"
+  },
+  "files": {
+    "ssh_public_key": "k8s-training.pub"
+  },
+  "scripts": {
+    "base": "base.sh"
+  }
+}
