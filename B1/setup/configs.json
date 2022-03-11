@@ -6,14 +6,14 @@
     {
       "name": "k8s-master",
       "count": 1,
-      "cpu": 2,
+      "cpu": 1,
       "memory": 4096,
       "first_ip": "192.168.56.11"
     },
     {
       "name": "k8s-worker",
       "count": 1,
-      "cpu": 2,
+      "cpu": 1,
       "memory": 4096,
       "first_ip": "192.168.56.21"
     }
