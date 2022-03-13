@@ -6,6 +6,7 @@ sudo mkdir -p /home/${USER}/.kube
 sudo cp -i /etc/kubernetes/admin.conf /home/${USER}/.kube/config
 
 sudo chown -R ${USER}:${USER} /home/${USER}/.kube
+sudo chmod 644 /home/${USER}/.kube/config
 
 JOIN_CLUSTER_FILE=/tmp/join.sh
 
@@ -14,6 +15,8 @@ sudo chmod +x ${JOIN_CLUSTER_FILE}
 
 sudo cp -i /etc/kubernetes/admin.conf /tmp/config
 sudo chmod 644 /tmp/config
+
+export KUBECONFIG=/home/${USER}/.kube/config
 
 kubectl apply -f https://projectcalico.docs.tigera.io/manifests/calico.yaml
 

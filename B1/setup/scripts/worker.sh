@@ -4,9 +4,12 @@ PRIVATE_KEY=/tmp/id_rsa
 
 sudo chmod 400 ${PRIVATE_KEY}
 
+sudo ls -la /vagrant
+
 sudo mkdir -p /home/${USER}/.kube
 sudo scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ${PRIVATE_KEY} ${USER}@${MASTER_IP_ADDRESS}:/tmp/config /home/${USER}/.kube/config
 sudo chown -R ${USER}:${USER} /home/${USER}/.kube
+sudo chmod 644 /home/${USER}/.kube/config
 
 JOIN_CLUSTER_FILE=/tmp/join.sh
 
