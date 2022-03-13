@@ -5,9 +5,6 @@ input_configs   = JSON.parse(File.read(File.join(work_dir, "configs.json")))
 scripts_dir     = File.join(work_dir, "scripts")
 files_dir       = File.join(work_dir, "files")
 
-# Define salt-master IP Address
-master_ip_address = ""
-
 # Fetch new IP Address from first_ip and index function
 def fetch_ip_address(first_ip, i)
     array = first_ip.split('.')
@@ -26,9 +23,8 @@ Vagrant.configure(2) do |config|
     # Define custom VM
     input_configs.fetch('vm').each do |vms|
 
-        # Define salt-master IP Address
+        # Define k8s-master type
         if vms.fetch('type') == "master"
-            master_ip_address = vms.fetch('first_ip')
             count = 1
         else
             count = vms.fetch('count')
@@ -60,7 +56,6 @@ Vagrant.configure(2) do |config|
                     s.env = {
                         "USER" => input_configs.fetch('username'),
                         "KUBERNETES_VERSION" => input_configs.fetch('k8s_version'),
-                        "MASTER_IP_ADDRESS" => master_ip_address,
                         "POD_CIDR" => input_configs.fetch('pod_cidr')
                     }
                 end

@@ -10,10 +10,12 @@ sudo swapoff -a
 # keeps the swaf off during reboot
 sudo sed -i '/swap/ s/^\(.*\)$/#\1/g' /etc/fstab
 
+sudo sed -i "s|http://us.|http://|g" /etc/apt/sources.list
+
 sudo apt-get update -y
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release net-tools
 
-
+IP_ADDRESS=`hostname -I | awk '{print $2}'`
 
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -32,5 +34,9 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 sudo apt-get update
 sudo apt-get install -y kubelet=${K8S_VERSION}-00 kubeadm=${K8S_VERSION}-00 kubectl=${K8S_VERSION}-00
 sudo apt-mark hold kubelet kubeadm kubectl
+
+sudo sed -i "s|/usr/bin/kubelet|/usr/bin/kubelet --node-ip=${IP_ADDRESS}|g" /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+sudo systemctl daemon-reload
 sudo systemctl enable kubelet
 sudo systemctl restart kubelet
