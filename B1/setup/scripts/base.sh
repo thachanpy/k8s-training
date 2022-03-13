@@ -1,8 +1,5 @@
 #!/bin/sh
 
-USER=k8s
-K8S_VERSION=1.23.4
-
 sudo useradd -m -s /bin/bash -U $USER -u 666 --group sudo
 sudo cp -pr /home/vagrant/.ssh /home/${USER}/.ssh
 sudo mv /tmp/id_rsa.pub /home/${USER}/.ssh/authorized_keys
