@@ -18,6 +18,7 @@ sudo scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ${PRIVAT
 sudo chmod +x ${JOIN_CLUSTER_FILE}
 sudo ${JOIN_CLUSTER_FILE}
 
+export KUBECONFIG=/home/${USER}/.kube/config
 kubectl label node $(hostname -s) node-role.kubernetes.io/worker=worker
 
 sudo systemctl restart systemd-resolved
