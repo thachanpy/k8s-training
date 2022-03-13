@@ -10,6 +10,7 @@ sudo swapoff -a
 # keeps the swaf off during reboot
 sudo sed -i '/swap/ s/^\(.*\)$/#\1/g' /etc/fstab
 
+sudo sed -i '/^nameserver/c nameserver 8.8.8.8' /etc/resolv.conf
 sudo sed -i "s|http://us.|http://|g" /etc/apt/sources.list
 
 sudo apt-get update -y
