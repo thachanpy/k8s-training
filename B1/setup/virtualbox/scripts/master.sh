@@ -18,7 +18,7 @@ JOIN_CLUSTER_FILE=/vagrant/outputs/join.sh
 sudo kubeadm token create --print-join-command > ${JOIN_CLUSTER_FILE}
 sudo chmod +x ${JOIN_CLUSTER_FILE}
 
-sudo cp -i /etc/kubernetes/admin.conf /vagrant/outputs/.kube/config
+yes | sudo cp -i /etc/kubernetes/admin.conf /vagrant/outputs/.kube/config
 
 export KUBECONFIG=/home/${USER}/.kube/config
 
