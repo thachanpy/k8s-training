@@ -47,17 +47,6 @@ EOF
 sudo echo '1' > /proc/sys/net/ipv4/ip_forward
 sudo sysctl --system
 
-# sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-# sudo apt-get update -y
-# sudo apt-get install docker-ce -y
-# sudo echo '{"exec-opts": ["native.cgroupdriver=systemd"]}' | sudo tee -a /etc/docker/daemon.json
-# sudo systemctl restart docker
-# sudo systemctl enable docker
-
-# sudo usermod -aG docker $USER
-
 # Install Kubernetes components
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list

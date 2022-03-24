@@ -13,7 +13,7 @@
     {
       "name": "k8s-worker",
       "type": "worker",
-      "count": 1,
+      "count": 2,
       "cpu": 2,
       "memory": 4096,
       "first_ip": "192.168.56.21"
