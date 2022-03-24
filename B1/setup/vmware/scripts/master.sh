@@ -2,7 +2,7 @@
 
 IP_ADDRESS=`hostname -I | awk '{print $2}'`
 
-sudo kubeadm init --apiserver-advertise-address=${IP_ADDRESS} --node-name $(hostname -s) --kubernetes-version=${K8S_VERSION} --ignore-preflight-errors=NumCPU
+sudo kubeadm init --apiserver-advertise-address=${IP_ADDRESS} --node-name $(hostname -s) --kubernetes-version=${K8S_VERSION} --ignore-preflight-errors=NumCPU --pod-network-cidr=${POD_CIDR}
 
 sudo mkdir -p /home/${USER}/.kube
 sudo cp -i /etc/kubernetes/admin.conf /home/${USER}/.kube/config
