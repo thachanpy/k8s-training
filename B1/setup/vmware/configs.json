@@ -15,7 +15,7 @@
       "type": "worker",
       "count": 2,
       "cpu": 2,
-      "memory": 4096,
+      "memory": 2048,
       "first_ip": "192.168.56.21"
     }
   ],
