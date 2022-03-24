@@ -1,6 +1,6 @@
 ## Chuẩn bị
 
-- ### Download và cài đặt VirtualBox - https://www.virtualbox.org/wiki/Downloads
+- ### Download và cài đặt VMware Workstation - https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html
 - ### Download và cài đặt Vagrant - https://www.vagrantup.com/downloads
 
 - ### Cài đặt Network cho VirtualBox
