@@ -10,7 +10,7 @@ spec:
   affinity:
     nodeAffinity:
       preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
+      - weight: 50
         preference:
           matchExpressions:
           - key: drink

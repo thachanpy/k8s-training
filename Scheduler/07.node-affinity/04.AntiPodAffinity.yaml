@@ -3,19 +3,19 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-affinity-scheduling-pod
+  name: trai-ghet-gai-xau
   namespace: scheduler-ns
 spec:
   containers:
   - name: nginx
     image: nginx
   affinity:
-    podAffinity:
+    podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: drink
+          - key: gai
             operator: In
             values:
-            - pepsi
+            - xau
         topologyKey: "kubernetes.io/hostname"

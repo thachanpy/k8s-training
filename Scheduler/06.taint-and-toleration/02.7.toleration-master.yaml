@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: toleration-exists-pod
+  name: master-pod
   namespace: scheduler-ns
 spec:
   containers:
   - name: nginx
     image: nginx
-    
+
   tolerations:
-  - key: "color"
+  - key: "node-role.kubernetes.io/master"
     operator: "Exists"
     effect: "NoSchedule"
 
   nodeSelector:
-    drink: cocacola
+    kubernetes.io/hostname: k8s-master-1
     # drink: pepsi

@@ -17,6 +17,6 @@ spec:
     operator: "Equal"
     value: "apple"
     effect: "NoExecute"
-    tolerationSeconds: 15
+    tolerationSeconds: 60
   nodeSelector:
     drink: cocacola

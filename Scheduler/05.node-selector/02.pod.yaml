@@ -8,5 +8,6 @@ spec:
   - name: nginx
     image: nginx
   nodeSelector:
-    drink: pepsi
-    #place: house
+    drink: cocacola
+    place: outside
+

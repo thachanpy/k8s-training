@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-affinity-scheduling-pod
+  name: trai-me-gai
   namespace: scheduler-ns
 spec:
   containers:
@@ -14,8 +14,8 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
       - labelSelector:
           matchExpressions:
-          - key: drink
+          - key: gai
             operator: In
             values:
-            - pepsi
+            - xinh
         topologyKey: "kubernetes.io/hostname"

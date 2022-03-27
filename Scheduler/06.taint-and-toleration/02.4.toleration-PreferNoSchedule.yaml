@@ -11,8 +11,9 @@ spec:
   containers:
   - name: nginx
     image: nginx
+
   tolerations:
   - key: "animal"
     operator: "Equal"
     value: "chicken"
-    effect: "PreferNoSchedule"
+
