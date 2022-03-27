@@ -1,0 +1,22 @@
+# kubectl taint nodes k8s-worker-1 fruit=apple:NoExecute-
+# apply this pod
+# kubectl taint nodes k8s-worker-1 fruit=apple:NoExecute
+# this pod will be deleted after 30s
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: toleration-no-excute-and-toleration-second-pod
+  namespace: scheduler-ns
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  tolerations:
+  - key: "fruit"
+    operator: "Equal"
+    value: "apple"
+    effect: "NoExecute"
+    tolerationSeconds: 15
+  nodeSelector:
+    drink: cocacola

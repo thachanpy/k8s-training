@@ -29,12 +29,13 @@
 
 ## 3. Tìm hiểu về Scheduling
 
-- ### Labels và Pod Selectors
-- ### Taint and Tolerations
+- ### Manual Scheduling
+- ### Static Pods
+- ### Labels và Selectors
 - ### Node Selectors
+- ### Taints and Tolerations
 - ### Node Affinity
 - ### Resource and Limit
-- ### Static Pods
 - ### Multiple Scheduler
 - ### DaemonSets
 

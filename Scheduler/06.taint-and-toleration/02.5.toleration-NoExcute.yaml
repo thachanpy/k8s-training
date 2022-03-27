@@ -1,0 +1,22 @@
+# Create new taint
+# kubectl taint nodes k8s-worker-1 fruit=apple:NoExecute
+# apply this pod
+# kubectl taint nodes k8s-worker-1 otherfruit=orange:NoExecute
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: toleration-no-excute-pod
+  namespace: scheduler-ns
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  tolerations:
+  - key: "fruit"
+    operator: "Equal"
+    value: "apple"
+    effect: "NoExecute"
+  nodeSelector:
+    drink: cocacola
+    # drink: pepsi

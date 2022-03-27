@@ -1,0 +1,21 @@
+# kubectl get pod -n scheduler-ns --selector tier=application
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+    tier: application
+  name: selector-service
+  namespace: scheduler-ns
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30006
+  selector:
+    app: nginx
+    tier: application
+  type: NodePort

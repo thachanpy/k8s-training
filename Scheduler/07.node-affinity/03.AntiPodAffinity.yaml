@@ -1,0 +1,21 @@
+# Create label for a pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity-scheduling-pod
+  namespace: scheduler-ns
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: drink
+            operator: In
+            values:
+            - pepsi
+        topologyKey: "kubernetes.io/hostname"

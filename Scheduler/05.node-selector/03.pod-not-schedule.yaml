@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-selector-pod-not-schedule
+  namespace: scheduler-ns
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  nodeSelector:
+    drink: pepsi
+    place: outside 
