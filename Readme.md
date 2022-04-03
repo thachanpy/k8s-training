@@ -3,7 +3,7 @@
 ## 1. Tìm hiểu về Docker.
 
 - ### Docker là gì?
-- ### Kiến trúc của Docker - containerd (container)
+- ### Kiến trúc của Docker
 
 ## 2. Tìm hiểu về K8s core concert
 
