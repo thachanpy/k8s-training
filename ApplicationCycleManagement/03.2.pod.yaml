@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    color: blue
+  name: configmap-pod
+  namespace: dev-namespace
+spec:
+  containers:
+  - image: nginx
+    name: configmap-container
+    volumeMounts:
+    - name: nginx-config
+      mountPath: /etc/nginx/config.d/default.conf
+      subPath: default.conf
+  volumes:
+    - name: nginx-config
+      configMap:
+        name: nginx-config

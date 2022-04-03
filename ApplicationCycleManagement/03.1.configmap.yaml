@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+  namespace: dev-namespace
+data:
+  app_username: "username"
+  app_password: "password"

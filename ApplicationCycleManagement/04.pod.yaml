@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    color: blue
+  name: secret-pod
+  namespace: dev-namespace
+spec:
+  containers:
+  - image: nginx
+    name: configmap-container
+    envFrom:
+    - secretRef:
+        name: secret-config
