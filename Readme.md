@@ -35,6 +35,7 @@
 - ### Node Selectors
 - ### Taints and Tolerations
 - ### Node Affinity
+- ### Pod Affinity
 - ### Resource and Limit
 - ### Multiple Scheduler
 - ### DaemonSets
@@ -80,7 +81,7 @@
 
 ## 9. Storage
 
-- ### ontainer Storage Interface
+- ### Container Storage Interface
 - ### Persistent Volumes
 - ### Persistent Volumes Claims
 - ### Storage Class
