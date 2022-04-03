@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-01
+  name: service-01
+  namespace: dev-namespace
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    color: blue
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-04
+  name: deployment-04
+  namespace: dev-namespace
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: deployment-04
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-04
+    spec:
+      containers:
+      - image: nginx
+        name: pod-in-deployment-04-container
+        resources: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: country
+                operator: In
+                values:
+                - vietnam
+      tolerations:
+      - key: "city"
+        operator: "Equal"
+        value: "hcm"
+        effect: "NoSchedule"
+status: {}

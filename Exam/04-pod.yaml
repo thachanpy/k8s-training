@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: pod-02-test
+    color: blue
+  name: pod-02
+  namespace: dev-namespace
+spec:
+  containers:
+  - image: httpd
+    name: pod-02-container
+    resources: {}

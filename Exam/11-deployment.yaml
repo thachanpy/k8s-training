@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-05
+  name: deployment-05
+  namespace: dev-namespace
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: deployment-05
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-05
+    spec:
+      containers:
+      - image: nginx
+        name: pod-in-deployment-05-container
+        resources: {}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: run
+                operator: In
+                values:
+                - pod-01
+            topologyKey: kubernetes.io/hostname
+      tolerations:
+      - key: "city"
+        operator: "Equal"
+        value: "hcm"
+        effect: "NoSchedule"
+status: {}

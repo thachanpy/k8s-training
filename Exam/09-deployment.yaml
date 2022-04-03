@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deployment-03
+  name: deployment-03
+  namespace: dev-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-03
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deployment-03
+    spec:
+      containers:
+      - image: nginx
+        name: pod-in-deployment-02-container
+        resources: {}
+      nodeSelector:
+        kubernetes.io/hostname: k8s-worker-2
+      tolerations:
+      - key: "city"
+        operator: "Equal"
+        value: "hcm"
+        effect: "NoSchedule"
+status: {}
